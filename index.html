@@ -169,6 +169,14 @@ table.nv{font-size:.68em;border-spacing:0 1px}.nv td{padding:.2em .45em}.nv th{p
 .mt tr.fin td{background:#E2EFDA;font-weight:700}.mt tr.ref td{background:#fff;border-bottom:1px solid var(--line)}
 .dp h4{font-size:.86em;text-transform:none}.d2 table.nv{font-size:.8em}.d2 ul.b{font-size:1.05em}.dp .un{font-size:.74em}
 
+/* v7: errores en MAPE */
+table.alt7{font-size:.76em;width:100%}.alt7 td{vertical-align:middle;padding:.25em .5em;background:#F4F5F8}.alt7 td.nw{white-space:nowrap}.alt7 td.rh{font-weight:700;color:var(--navy);background:#E9EBF0;white-space:nowrap}
+.alt7 td.ds{font-size:.92em;color:#3a4a66;vertical-align:top}.alt7 tr.sec td{background:#fff;color:var(--teal);font-weight:700;font-size:.82em;letter-spacing:.04em;border-bottom:2px solid var(--teal);padding-top:.4em}
+.alt7 td.up b{color:var(--grn)}.alt7 th .tag{font-size:.62em;margin-left:.3em}.alt7 td.rh small{font-weight:400;color:var(--g2);margin-left:.4em}.alt7 th{white-space:nowrap}
+.alt7 td.fin{box-shadow:inset 0 0 0 999px rgba(30,140,58,.06)}
+table.zt{font-size:.82em}.zt td{padding:.28em .55em}.zt tr.hi td{font-weight:700}
+.lgt span{cursor:pointer}.lgt span.off{opacity:.35}
+
 /* adicionales: pesados */
 .alt2{font-size:.8em}.alt2 td{vertical-align:top;background:#F4F5F8;padding:.38em .55em}.alt2 td.rh{font-weight:700;color:var(--navy);background:#E9EBF0;white-space:nowrap}
 .fl3{grid-template-columns:1fr 1.8em 1fr 1.8em 1fr 1.8em 1fr;margin-top:.3em}.fl3 .step .c{padding:.4em .65em;gap:.3em;font-size:.84em}.fl3 .step .n{font-size:.88em;padding:.32em .6em}.fl3 .step .ex{padding:.25em .5em}.fl3 .step .ex b{font-size:1.25em}
@@ -219,8 +227,8 @@ table.cf{font-size:.8em}.cf td{padding:.32em .5em}.cf td.g{color:var(--grn);font
           <tr><td class="rh">Total nacional</td><td class="l">2026 anualizado por zona: 29,8 mil; 2027–2029, Gildemeister I: 28,4 mil en 2029</td><td class="l">2026 anualizado por zona: 5,0 mil; 2027–2029, crecimiento del modelo nacional (PBI nominal en US$ y turistas): 6,0 mil en 2029</td></tr>
           <tr><td class="rh">Reparto por zona</td><td class="l">Panel ECM: equilibrio de cada zona con su masa salarial; manufactura (Norte y Sur) y Niño (Norte) solo en el corto plazo</td><td class="l">Panel ECM: equilibrio de cada zona con su PBI minero; manufactura (Norte y Sur) solo en el corto plazo</td></tr>
           <tr><td class="rh">Por qué</td><td class="l">Las 5 zonas tienen series suficientes (Oriente, la menor, 98–262 unidades al año)</td><td class="l">El PBI minero por zona se ajusta mejor que la masa salarial (5,2 frente a 8,8 pp de error)</td></tr>
-          <tr><td class="rh">Validación</td><td class="l">Error de reparto fuera de muestra: 4,2 pp (solo masa salarial: 4,5 pp)</td><td class="l">Error de reparto fuera de muestra: 5,2 pp (solo PBI minero: 4,9 pp)</td></tr>
-          <tr><td class="rh">Láminas</td><td class="l">3 a 7</td><td class="l">8 a 11</td></tr>
+          <tr><td class="rh">Validación</td><td class="l">Error de reparto fuera de muestra: 4,2 pp (solo masa salarial: 4,5 pp). MAPE 2023–2025: 17,5% (PBI minero: 12,2%)</td><td class="l">Error de reparto fuera de muestra: 5,2 pp (solo PBI minero: 4,9 pp). MAPE 2023–2025: 14,8% (masa salarial: 24,1%)</td></tr>
+          <tr><td class="rh">Láminas</td><td class="l">3 (errores en MAPE) y 4 a 9</td><td class="l">3 y 10 a 14</td></tr>
         </tbody></table>
         <p class="note" style="margin-top:.7em">En 2025, los pesados suman 24.795 unidades: 84% camiones y 16% buses. Lima concentra 69% de los camiones y 63% de los buses.</p>
       </div>
@@ -229,11 +237,23 @@ table.cf{font-size:.8em}.cf td{padding:.32em .5em}.cf td.g{color:var(--grn);font
   <div class="ft"><span class="fn">Camiones: clase AAP «Camiones y tracto» (reportes de pesados de diciembre, hoja Oficina y Clase). Buses: clase AAP «Minibús, ómnibus» completa (consolidado AAP, BDCRUDA); ambos coinciden con los reportes anuales de pesados.</span><span class="src">FUENTE: AAP, APOYO Consultoría</span></div>
 </div></section>
 
-<!-- 2. Camiones: modelo -->
-<section class="slide" id="s2" data-t="2. Camiones: modelo"><div class="in">
+<!-- 2. Resumen de errores en MAPE -->
+<section class="slide" id="sM" data-t="2. Errores de los modelos"><div class="in">
   <div class="top"><span class="logo"></span></div>
   <div class="bd">
-    <div class="kq">2 | Camiones: modelo por zona</div>
+    <div class="kq">2 | Errores de los modelos</div>
+    <h2>En MAPE, el PBI minero tiene menos error que la masa salarial en camiones y en buses; en camiones se mantiene la masa salarial porque el PBI minero no es significativo en el largo plazo</h2>
+    <div class="ctl"><div class="tabs" id="tMs"></div><div class="tabs" id="tMm"></div></div>
+    <div id="tbM" class="grow" style="margin-top:.35em"></div>
+  </div>
+  <div class="ft"><span class="fn">MAPE: error porcentual medio de las 5 zonas, |part. proyectada / real − 1|. Error de reparto: ½ Σ |part. proyectada − real|. Backtesting con datos hasta cada año y los valores reales de las variables; detalle por zona en las láminas 6 y 13. En verde, el menor de cada fila. Panel ECM con efectos fijos de zona, 2016–2025; LP: largo plazo, CP: corto plazo; las variables nacionales × dummy de zona entran solo en el CP, salvo el oro del upside.</span><span class="src">FUENTE: AAP, datasae, APOYO Consultoría</span></div>
+</div></section>
+
+<!-- 2. Camiones: modelo -->
+<section class="slide" id="s2" data-t="3. Camiones: modelo"><div class="in">
+  <div class="top"><span class="logo"></span></div>
+  <div class="bd">
+    <div class="kq">3 | Camiones: modelo por zona</div>
     <h2>El panel ECM reparte el total nacional con la masa salarial de cada zona; la manufactura (Norte y Sur) y el Niño (Norte) solo mueven el corto plazo</h2>
     <div class="flow fl3">
       <div class="step"><div class="n"><span>1</span>Total nacional</div><div class="c"><p>2026: anualizado por zona con ene–ago. 2027–2029: Gildemeister I. <b style="color:var(--navy)">Decide el tamaño del mercado.</b></p><div class="ex">Camiones 2029<b>28,4 mil</b></div></div></div>
@@ -273,10 +293,10 @@ table.cf{font-size:.8em}.cf td{padding:.32em .5em}.cf td.g{color:var(--grn);font
 </div></section>
 
 <!-- 3. Camiones: validación -->
-<section class="slide" id="s3" data-t="3. Camiones: validación"><div class="in">
+<section class="slide" id="s3" data-t="4. Camiones: validación"><div class="in">
   <div class="top"><span class="logo"></span></div>
   <div class="bd">
-    <div class="kq">3 | Camiones: ¿funciona con la data histórica?</div>
+    <div class="kq">4 | Camiones: ¿funciona con la data histórica?</div>
     <h2>El modelo final asigna mal 4,2 pp del mercado, menos que sin el Niño (4,6 pp) o con solo masa salarial (4,5 pp)</h2>
     <div class="ctl"><div class="tabs" id="t3"></div></div>
     <div class="row grow">
@@ -291,7 +311,7 @@ table.cf{font-size:.8em}.cf td{padding:.32em .5em}.cf td.g{color:var(--grn);font
         <ul class="b" style="margin-top:.7em;font-size:.86em">
           <li><b>Solo masa salarial:</b> 4,5 pp. Agregar en el corto plazo la manufactura (Norte y Sur) y el Niño (Norte) baja el error en 0,4 pp.</li>
           <li><b>Sin Niño:</b> el mismo modelo sin el Niño del año anterior. El Niño baja el error de 4,6 a 4,2 pp: de 4,4 a 4,0 a un paso y de 4,8 a 4,4 a varios pasos.</li>
-          <li><b>Frente a la manufactura en el largo plazo</b> (4,1 pp), el error casi no cambia, pero el reparto de 2026 se acerca al real anualizado: 3,3 pp de error frente a 5,2. Solo masa + Niño tiene 3,9 pp (lámina 5).</li>
+          <li><b>Frente a la manufactura en el largo plazo</b> (4,1 pp), el error casi no cambia, pero el reparto de 2026 se acerca al real anualizado: 3,3 pp de error frente a 5,2. Solo masa + Niño tiene 3,9 pp (lámina 7).</li>
         </ul>
       </div>
     </div>
@@ -299,11 +319,35 @@ table.cf{font-size:.8em}.cf td{padding:.32em .5em}.cf td.g{color:var(--grn);font
   <div class="ft"><span class="fn">Error de reparto = ½ Σ |participación proyectada − real| por zona. Un paso: cada año 2021–2025 se re-estima con los años anteriores y se proyecta con los valores reales de las variables. Varios pasos: estimado hasta 2022, proyecta 2023–2025. Promedio: media de ambos. Sin Niño: la misma manufactura en el corto plazo, sin el Niño. Modelo final elegido por decisión: la manufactura del Sur tiene p HAC 0,07.</span><span class="src">FUENTE: AAP, APOYO Consultoría</span></div>
 </div></section>
 
-<!-- 4. Camiones: comparación de modelos -->
-<section class="slide" id="s3b" data-t="4. Camiones: comparar modelos"><div class="in">
+<!-- 4. Camiones: MAPE por zona -->
+<section class="slide" id="sZc" data-t="5. Camiones: MAPE por zona"><div class="in">
   <div class="top"><span class="logo"></span></div>
   <div class="bd">
-    <div class="kq">4 | Camiones: proyección según el modelo seleccionado</div>
+    <div class="kq">5 | Camiones: masa salarial o PBI minero, error por zona</div>
+    <h2>En camiones, el PBI minero baja el MAPE de las 4 pruebas 2023–2025 de 17,5% a 12,2%: mejora en todas las zonas salvo el Sur</h2>
+    <div class="row grow" style="gap:2.2em">
+      <div class="col" style="flex:0 0 40%">
+        <div class="ctl"><div class="tabs" id="tsZcp"></div></div>
+        <h4 id="hsZca"></h4><div class="un" id="usZca"></div>
+        <div id="tbsZc"></div>
+        <ul class="b" style="margin-top:.6em;font-size:.84em"><li><b>A 1, 2 y 3 años:</b> 16,3%, 15,6% y 15,2% con PBI minero, frente a 16,5%, 19,2% y 18,6% con masa salarial. 2026 frente al real: 8,5% frente a 13,2%.</li><li><b>Oriente:</b> con 1% del mercado, tiene el mayor MAPE (26,2% con masa y 21,6% con PBI minero en las 4 pruebas); pocas unidades hacen grande el error porcentual. En pp de reparto, el error es 4,41 y 2,90.</li><li><b>Por qué se mantiene la masa salarial:</b> con el PBI minero, su elasticidad de largo plazo es 0,13 y no es significativa (p HAC 0,51); la de la masa salarial es 1,50 (p HAC 0,000). Con el PBI minero, Lima llega a 68,1% en 2029 (final: 66,5%).</li></ul>
+      </div>
+      <div class="col grow">
+        <div class="ctl"><div class="tabs" id="tsZcw"></div><div class="tabs" id="tsZcm"></div></div>
+        <h4 id="hsZcb"></h4><div class="un" id="usZcb"></div>
+        <div class="lg lgt" id="lsZc"></div>
+        <div class="ch grow" id="csZc"></div>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><span class="fn">Backtesting: se estima con datos hasta un año y se proyecta sin usar lo observado, con los valores reales de las variables. MAPE: error porcentual medio de las 5 zonas, |participación proyectada / real − 1|. Error de reparto: ½ Σ |participación proyectada − real|. 4 pruebas 2023–2025: datos hasta 2022 (2023 y 2024) y hasta 2023 (2024 y 2025). A 1, 2 y 3 años: año 1, 2 o 3 de cada proyección, con datos hasta 2020–24. 2026: proyección con datos hasta 2025 frente al real anualizado por zona (camiones ene–ago, buses ene–jul). En muestra: cada año 2017–2025 desde lo observado el año anterior. Clic en la leyenda para mostrar u ocultar una zona.</span><span class="src">FUENTE: AAP, datasae, APOYO Consultoría</span></div>
+</div></section>
+
+<!-- 4. Camiones: comparación de modelos -->
+<section class="slide" id="s3b" data-t="6. Camiones: comparar modelos"><div class="in">
+  <div class="top"><span class="logo"></span></div>
+  <div class="bd">
+    <div class="kq">6 | Camiones: proyección según el modelo seleccionado</div>
     <h2 id="h2_c"></h2>
     <div class="ctl" style="gap:.9em"><div class="tabs" id="tcz"></div><div class="tabs" id="tcm"></div><div class="tabs" id="tcy"></div><div class="tabs" id="tca"></div></div>
     <div class="row grow" style="margin-top:.3em">
@@ -324,10 +368,10 @@ table.cf{font-size:.8em}.cf td{padding:.32em .5em}.cf td.g{color:var(--grn);font
 </div></section>
 
 <!-- 5. Camiones: resultados -->
-<section class="slide" id="s4" data-t="5. Camiones: resultados"><div class="in">
+<section class="slide" id="s4" data-t="7. Camiones: resultados"><div class="in">
   <div class="top"><span class="logo"></span></div>
   <div class="bd">
-    <div class="kq">5 | Camiones: ventas por zona</div>
+    <div class="kq">7 | Camiones: ventas por zona</div>
     <h2>Hacia 2029 el reparto de camiones cambia poco: el Norte sube de 12,0% a 13,8% y Lima baja de 68,7% a 66,5%</h2>
     <div class="ctl"><div class="tabs" id="t4"></div></div>
     <div class="row grow">
@@ -351,10 +395,10 @@ table.cf{font-size:.8em}.cf td{padding:.32em .5em}.cf td.g{color:var(--grn);font
 </div></section>
 
 <!-- 6. Camiones: upside con oro -->
-<section class="slide" id="s4u" data-t="6. Camiones: upside oro"><div class="in">
+<section class="slide" id="s4u" data-t="8. Camiones: upside oro"><div class="in">
   <div class="top"><span class="logo"></span></div>
   <div class="bd">
-    <div class="kq">6 | Camiones: upside con oro</div>
+    <div class="kq">8 | Camiones: upside con oro</div>
     <h2>Con el precio del oro en el equilibrio del Sur, el Sur llega a 5.375 camiones en 2029 (18,9% del mercado), 945 más que en el modelo final</h2>
     <div class="row grow" style="margin-top:.6em;gap:2.4em">
       <div class="col" style="flex:0 0 60%">
@@ -382,10 +426,10 @@ table.cf{font-size:.8em}.cf td{padding:.32em .5em}.cf td.g{color:var(--grn);font
 </div></section>
 
 <!-- 6. Buses: modelo -->
-<section class="slide" id="s5" data-t="7. Buses: modelo nacional"><div class="in">
+<section class="slide" id="s5" data-t="9. Buses: modelo nacional"><div class="in">
   <div class="top"><span class="logo"></span></div>
   <div class="bd">
-    <div class="kq">7 | Buses: modelo nacional</div>
+    <div class="kq">9 | Buses: modelo nacional</div>
     <h2>Buses se proyecta con el crecimiento del PBI nominal en US$ y de la llegada de turistas, el mismo esquema del modelo nacional de livianos</h2>
     <div class="row grow" style="margin-top:.5em;gap:2.4em">
       <div class="col" style="flex:0 0 47%">
@@ -399,7 +443,7 @@ table.cf{font-size:.8em}.cf td{padding:.32em .5em}.cf td.g{color:var(--grn);font
         <h4 style="margin-top:.8em">Selección</h4>
         <div class="funnel"><div><b>2.015</b>modelos de 1 a 3 variables (48 variables y el Niño)</div><div><b>376</b>con todos los signos esperados</div><div class="on"><b>38</b>además, todos los términos con p &lt; 0,05</div></div>
         <ul class="b" style="margin-top:.4em;font-size:.84em">
-          <li><b>Adoptado por decisión:</b> turistas tiene p MCO de 0,10, así que no cumple la regla estricta; el de menor error sin Niño (tipo de cambio + PBI servicios) tiene 12,7 pp. Ambos se comparan en la lámina 9.</li>
+          <li><b>Adoptado por decisión:</b> turistas tiene p MCO de 0,10, así que no cumple la regla estricta; el de menor error sin Niño (tipo de cambio + PBI servicios) tiene 12,7 pp. Ambos se comparan en la lámina 11.</li>
           <li><b>Uso en la v6:</b> el modelo da el crecimiento nacional de 2027–2029 (+8,0%, +8,4%, +2,2%); el punto de partida es el 2026 anualizado por zona (5.050; con el peso de enero–julio sería 4.755).</li>
         </ul>
       </div>
@@ -415,10 +459,10 @@ table.cf{font-size:.8em}.cf td{padding:.32em .5em}.cf td.g{color:var(--grn);font
 </div></section>
 
 <!-- 7. Buses: comparación de modelos -->
-<section class="slide" id="s6" data-t="8. Buses: comparar modelos"><div class="in">
+<section class="slide" id="s6" data-t="10. Buses: comparar modelos"><div class="in">
   <div class="top"><span class="logo"></span></div>
   <div class="bd">
-    <div class="kq">8 | Buses: proyección nacional según el modelo seleccionado</div>
+    <div class="kq">10 | Buses: proyección nacional según el modelo seleccionado</div>
     <h2 id="h2_6">Con el modelo adoptado, 2029 cierra en 5,7 mil buses desde el 2026 nacional (6,0 mil desde el anualizado por zona); 35 de los 38 modelos que cumplen la regla proyectan más</h2>
     <div class="ctl"><div class="tabs" id="t6f"></div><input id="q6" class="q6" type="search" placeholder="Buscar variable (p. ej. tipo de cambio)"><span class="cnt6" id="n6"></span></div>
     <div class="row grow" style="margin-top:.2em">
@@ -439,10 +483,10 @@ table.cf{font-size:.8em}.cf td{padding:.32em .5em}.cf td.g{color:var(--grn);font
 </div></section>
 
 <!-- 9. Buses: modelo por zona -->
-<section class="slide" id="s6z" data-t="9. Buses: modelo por zona"><div class="in">
+<section class="slide" id="s6z" data-t="11. Buses: modelo por zona"><div class="in">
   <div class="top"><span class="logo"></span></div>
   <div class="bd">
-    <div class="kq">9 | Buses: modelo por zona</div>
+    <div class="kq">11 | Buses: modelo por zona</div>
     <h2>Buses se reparte por zona con un panel ECM: el PBI minero de cada zona se ajusta mejor que la masa salarial, y la manufactura entra en el Norte y el Sur como en camiones</h2>
     <div class="row grow" style="margin-top:.6em;gap:2.4em">
       <div class="col" style="flex:0 0 55%">
@@ -471,11 +515,35 @@ table.cf{font-size:.8em}.cf td{padding:.32em .5em}.cf td.g{color:var(--grn);font
   <div class="ft"><span class="fn">Panel ECM en dos etapas con efectos fijos de zona, 2016–2025. Largo plazo: ln B<sub>z,t</sub> = α<sub>z</sub> + β ln M<sub>z,t</sub> (M: PBI minería e hidrocarburos de la zona, Insumo por zonas). Corto plazo: Δln B<sub>z,t</sub> = c + φ û<sub>z,t−1</sub> + θ Δln M<sub>z,t</sub> + θ<sub>N</sub> Δln PBI manuf. no primaria<sub>t</sub> D<sub>Norte</sub> + θ<sub>S</sub> Δln PBI manuf.<sub>t</sub> D<sub>Sur</sub>. Error: un paso 2021–2025 y varios pasos desde 2022. Notebook 12.</span><span class="src">FUENTE: AAP, datasae, APOYO Consultoría</span></div>
 </div></section>
 
-<!-- 8. Buses: resultados -->
-<section class="slide" id="s7" data-t="10. Buses: resultados"><div class="in">
+<!-- 11. Buses: MAPE por zona -->
+<section class="slide" id="sZb" data-t="12. Buses: MAPE por zona"><div class="in">
   <div class="top"><span class="logo"></span></div>
   <div class="bd">
-    <div class="kq">10 | Buses: ventas nacionales y por zona</div>
+    <div class="kq">12 | Buses: masa salarial o PBI minero, error por zona</div>
+    <h2>En buses, el PBI minero (modelo final) tiene menor MAPE que la masa salarial en todas las zonas salvo el Oriente: 14,8% frente a 24,1% en las 4 pruebas 2023–2025</h2>
+    <div class="row grow" style="gap:2.2em">
+      <div class="col" style="flex:0 0 40%">
+        <div class="ctl"><div class="tabs" id="tsZbp"></div></div>
+        <h4 id="hsZba"></h4><div class="un" id="usZba"></div>
+        <div id="tbsZb"></div>
+        <ul class="b" style="margin-top:.6em;font-size:.84em"><li><b>A 1, 2 y 3 años:</b> 22,6%, 22,5% y 23,3% con PBI minero, frente a 26,2%, 27,0% y 31,6% con masa salarial. 2026 frente al real: 18,8% frente a 22,2%.</li><li><b>Oriente:</b> con cerca de 2% de los buses, tiene el mayor MAPE (41,3% con PBI minero y 39,1% con masa salarial en las 4 pruebas).</li><li><b>Significancia:</b> ninguna de las dos es significativa en el largo plazo: PBI minero β 0,51 (p HAC 0,19), masa salarial β 0,90 (p HAC 0,21).</li></ul>
+      </div>
+      <div class="col grow">
+        <div class="ctl"><div class="tabs" id="tsZbw"></div><div class="tabs" id="tsZbm"></div></div>
+        <h4 id="hsZbb"></h4><div class="un" id="usZbb"></div>
+        <div class="lg lgt" id="lsZb"></div>
+        <div class="ch grow" id="csZb"></div>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><span class="fn">Backtesting: se estima con datos hasta un año y se proyecta sin usar lo observado, con los valores reales de las variables. MAPE: error porcentual medio de las 5 zonas, |participación proyectada / real − 1|. Error de reparto: ½ Σ |participación proyectada − real|. 4 pruebas 2023–2025: datos hasta 2022 (2023 y 2024) y hasta 2023 (2024 y 2025). A 1, 2 y 3 años: año 1, 2 o 3 de cada proyección, con datos hasta 2020–24. 2026: proyección con datos hasta 2025 frente al real anualizado por zona (camiones ene–ago, buses ene–jul). En muestra: cada año 2017–2025 desde lo observado el año anterior. Clic en la leyenda para mostrar u ocultar una zona.</span><span class="src">FUENTE: AAP, datasae, APOYO Consultoría</span></div>
+</div></section>
+
+<!-- 8. Buses: resultados -->
+<section class="slide" id="s7" data-t="13. Buses: resultados"><div class="in">
+  <div class="top"><span class="logo"></span></div>
+  <div class="bd">
+    <div class="kq">13 | Buses: ventas nacionales y por zona</div>
     <h2>Buses crecen 27% en 2026 (anualizado por zona) y 51% entre 2025 y 2029, hasta 6,0 mil; el Sur sube de 20,5% a 21,8%</h2>
     <div class="ctl"><div class="tabs" id="t7"></div></div>
     <div class="row grow">
@@ -490,7 +558,7 @@ table.cf{font-size:.8em}.cf td{padding:.32em .5em}.cf td.g{color:var(--grn);font
         <ul class="b" style="margin-top:.6em;font-size:.86em">
           <li><b>2026:</b> a julio se inscribieron 2.720 buses, 25% más que en enero–julio de 2025. Por zona: Norte +39%, Sur +8%, Oriente +8%, Lima +25% y Centro +180% (30 buses en ene–jul 2025).</li>
           <li><b>2027–2029:</b> el total crece 8,0%, 8,4% y 2,2%, como el modelo nacional (PBI nominal en US$ y turistas).</li>
-          <li><b>Reparto:</b> panel ECM por zona (lámina 10). El Sur pasa de 17,5% en 2026 a 21,8% en 2029 y Lima de 62,2% a 63,6%; el Norte baja a 11,0% con su PBI minero (−5% al año).</li>
+          <li><b>Reparto:</b> panel ECM por zona (lámina 12). El Sur pasa de 17,5% en 2026 a 21,8% en 2029 y Lima de 62,2% a 63,6%; el Norte baja a 11,0% con su PBI minero (−5% al año).</li>
         </ul>
       </div>
     </div>
@@ -499,10 +567,10 @@ table.cf{font-size:.8em}.cf td{padding:.32em .5em}.cf td.g{color:var(--grn);font
 </div></section>
 
 <!-- 9. Pesados -->
-<section class="slide" id="s8" data-t="11. Pesados: total"><div class="in">
+<section class="slide" id="s8" data-t="14. Pesados: total"><div class="in">
   <div class="top"><span class="logo"></span></div>
   <div class="bd">
-    <div class="kq">11 | Pesados: camiones + buses</div>
+    <div class="kq">14 | Pesados: camiones + buses</div>
     <h2>Los pesados pasan de 24,8 mil en 2025 a 34,9 mil en 2026 (anualizado) y 34,4 mil en 2029; el Norte gana 1,3 pp de participación, el Sur 0,3 pp y Lima pierde 1,7 pp</h2>
     <div class="ctl"><div class="tabs" id="t8m"></div><div class="tabs" id="t8"></div></div>
     <div class="row grow">
@@ -522,10 +590,10 @@ table.cf{font-size:.8em}.cf td{padding:.32em .5em}.cf td.g{color:var(--grn);font
 </div></section>
 
 <!-- 10. Pesados por zona: ajuste, proyección y real 2026 -->
-<section class="slide" id="s8b" data-t="12. Pesados: zona y año"><div class="in">
+<section class="slide" id="s8b" data-t="15. Pesados: zona y año"><div class="in">
   <div class="top"><span class="logo"></span></div>
   <div class="bd">
-    <div class="kq">12 | Pesados por zona: ajuste, 2026 anualizado y proyección</div>
+    <div class="kq">15 | Pesados por zona: ajuste, 2026 anualizado y proyección</div>
     <h2>La proyección parte del 2026 anualizado por zona (34,9 mil de pesados); en 2027 el Norte cae 9% por el Niño y Lima 8% con el total de Gildemeister I</h2>
     <div class="ctl"><div class="tabs" id="t9s"></div><div class="tabs" id="t9z"></div><div class="tabs" id="t9m"></div></div>
     <div class="row grow">
@@ -554,19 +622,20 @@ table.cf{font-size:.8em}.cf td{padding:.32em .5em}.cf td.g{color:var(--grn);font
     <h2>Ficha técnica y próximos pasos</h2>
     <div class="row grow" style="margin-top:.6em;gap:3em">
       <div class="col" style="flex:0 0 56%">
-        <dl class="inputs" style="margin-top:0;font-size:.9em;gap:.6em 1.2em">
-          <dt>Camiones</dt><dd>Panel ECM en dos etapas con efectos fijos de zona: masa salarial formal (5 zonas) en el largo plazo; Δ PBI manufactura no primaria (Norte), Δ PBI manufactura (Sur) y Niño del año anterior (Norte) solo en el corto plazo, como en livianos. 2016–2025, 50 observaciones. Errores HAC (Newey–West por zona, 2 rezagos). Comparación: 44 variables de datasae, una a la vez, en el Norte o en el Sur (73 significativas con HAC, lámina 5).</dd>
-          <dt>Total camiones</dt><dd>2026: anualizado por zona, 2025 × crecimiento ene–ago 2026 (AAP, corte agosto): 29,8 mil (Gildemeister I: 27,8 mil). 2027–2029: Gildemeister I (Proyecciones anuales por segmento), 28,4 mil en 2029. Upside: oro (ln) × Sur en el largo plazo, mismo total (lámina 7).</dd>
+        <dl class="inputs" style="margin-top:0;font-size:.82em;gap:.45em 1.2em">
+          <dt>Camiones</dt><dd>Panel ECM en dos etapas con efectos fijos de zona: masa salarial formal (5 zonas) en el largo plazo; Δ PBI manufactura no primaria (Norte), Δ PBI manufactura (Sur) y Niño del año anterior (Norte) solo en el corto plazo, como en livianos. 2016–2025, 50 observaciones. Errores HAC (Newey–West por zona, 2 rezagos). Comparación: 44 variables de datasae, una a la vez, en el Norte o en el Sur (73 significativas con HAC, lámina 7).</dd>
+          <dt>Total camiones</dt><dd>2026: anualizado por zona, 2025 × crecimiento ene–ago 2026 (AAP, corte agosto): 29,8 mil (Gildemeister I: 27,8 mil). 2027–2029: Gildemeister I (Proyecciones anuales por segmento), 28,4 mil en 2029. Upside: oro (ln) × Sur en el largo plazo, mismo total (lámina 9).</dd>
           <dt>Buses</dt><dd>MCO del crecimiento anual (100 · Δln) con PBI nominal en US$ y llegada de extranjeros al Jorge Chávez, 2017–2026 (10 observaciones; 2026 anualizado). Errores MCO y HC1. Da el crecimiento nacional 2027–2029.</dd>
-          <dt>Buses por zona</dt><dd>Panel ECM en dos etapas con efectos fijos de zona: PBI minería e hidrocarburos de la zona en el largo plazo; Δ PBI manufactura no primaria (Norte) y Δ PBI manufactura (Sur) solo en el corto plazo, sin Niño. 2016–2025, 50 observaciones. 2026: 2025 × crecimiento ene–jul 2026 de cada zona (lámina 10).</dd>
+          <dt>Buses por zona</dt><dd>Panel ECM en dos etapas con efectos fijos de zona: PBI minería e hidrocarburos de la zona en el largo plazo; Δ PBI manufactura no primaria (Norte) y Δ PBI manufactura (Sur) solo en el corto plazo, sin Niño. 2016–2025, 50 observaciones. 2026: 2025 × crecimiento ene–jul 2026 de cada zona (lámina 12).</dd>
+          <dt>Errores en MAPE</dt><dd>Láminas 3, 6 y 13; backtesting con datos hasta 2020–2024 (la serie empieza en 2016). PBI minero en camiones: menor MAPE, pero β de largo plazo 0,13 (p HAC 0,51); se mantiene la masa salarial.</dd>
           <dt>Datos</dt><dd>Reportes AAP de pesados (dic. 2016–2025); consolidado AAP 2016–jul 2026 (BDCRUDA); zonas de Gildemeister por departamento (hoja Guía); Inmatriculaciones ene–ago 2026 por zona (AAP); Insumo por zonas (masa salarial y PBI minería); datasae (variables nacionales, turismo y temperatura del mar).</dd>
-          <dt>Archivos</dt><dd>Notebooks 11 (camiones por zona v5: mixta, 2026 anualizado y upside oro), 15 (buses nacional), 12 (buses por zona) y 18 (pesados v3), con sus Excel en 4 Resultados/Pesados. La comparación de la lámina 5 sale de un cálculo aparte sobre el notebook 11.</dd>
+          <dt>Archivos</dt><dd>Notebooks 11 (camiones por zona v5: mixta, 2026 anualizado y upside oro), 15 (buses nacional), 12 (buses por zona) y 18 (pesados v3), con sus Excel en 4 Resultados/Pesados. La comparación de la lámina 7 sale de un cálculo aparte sobre el notebook 11; los MAPE, de gen_pesados_v7/mape7.py.</dd>
         </dl>
       </div>
       <div class="col grow">
         <h4>Próximos pasos</h4>
         <div class="reasons" style="margin-top:.5em">
-          <div><div><h5>Decidir el modelo de buses</h5><p>El adoptado no cumple la regla estricta (turistas, p MCO 0,10). El de menor error sin Niño (tipo de cambio + PBI servicios) da 7,1 mil en 2029, 26% más (lámina 8).</p></div></div>
+          <div><div><h5>Decidir el modelo de buses</h5><p>El adoptado no cumple la regla estricta (turistas, p MCO 0,10). El de menor error sin Niño (tipo de cambio + PBI servicios) da 7,1 mil en 2029, 26% más (lámina 10).</p></div></div>
           <div><div><h5>Alinear el Niño 2027 con livianos</h5><p>Camiones usa 2027 neutral (0,43 °C); livianos, la anomalía trimestral proyectada (5,0 °C en el T1). Con el rezago, cambia al Norte en 2028.</p></div></div>
           <div><div><h5>Revisar el salto 2026–2027</h5><p>El 2026 anualizado de camiones (29,8 mil) queda 7% sobre Gildemeister I y el total cae 10% en 2027 (26,8 mil). En buses, el Centro sube 180% en 2026 por una base baja.</p></div></div>
           <div><div><h5>Buses por zona</h5><p>La elasticidad al PBI minero no es significativa (p HAC 0,19) y la manufactura no baja el error frente a solo PBI minero (5,2 frente a 4,9 pp).</p></div></div>
@@ -642,7 +711,7 @@ function bars(el, o) {
         const v = se.v[i]; if (v == null || !isFinite(v)) return;
         const x = x0 + bw * j, c = (se.cs && se.cs[i]) || se.c;
         s += `<rect x="${x + bw * 0.06}" y="${Math.min(y(v), y(0))}" width="${bw * 0.88}" height="${Math.abs(y(v) - y(0))}" fill="${c}" ${se.stroke ? `stroke="${se.stroke}" stroke-dasharray="3 2"` : ""}/>`;
-        if (o.labels !== false) s += lab(x + bw / 2, v >= 0 ? y(v) - fs * 0.35 : y(v) + fs * 1.05, (o.vf || nf)(v), {fs: Math.min(fs * 0.84, bw * 0.42), w: se.bold ? 700 : null});
+        if (o.labels !== false && !se.nolab) s += lab(x + bw / 2, v >= 0 ? y(v) - fs * 0.35 : y(v) + fs * 1.05, (o.vf || nf)(v), {fs: se.big ? fs * 0.8 : Math.min(fs * 0.84, bw * 0.42), w: se.bold ? 700 : null});
       });
     }
     s += lab(ml + gw * i + gw / 2, H - mb + fs * 1.3, c, {fs, w: o.boldCat && o.boldCat(c) ? 700 : null});
@@ -1125,6 +1194,65 @@ function set9(k, z, m) {
   r9();
 }
 
+
+/* ---------- v7: errores en MAPE ---------- */
+const D7 = {"zonas":["Norte","Centro","Sur","Oriente","Lima"],"orig":[2020,2021,2022,2023,2024],"seg":{"Camiones":[{"k":"masa_final","n":"Modelo final","d":"Masa salarial (LP); manufactura N y S, Niño N (CP)","tag":"final","w":"masa","bW":1.497,"pW":0.0,"m":{"p4":17.52,"h1":16.51,"h2":19.25,"h3":18.566,"sd4":6.505,"y26":13.16,"aj":11.284},"e":{"p4":4.412,"h1":3.985,"h2":4.649,"h3":4.956,"sd4":1.753,"y26":3.322,"aj":2.586},"z":{"p4":[26.27,23.078,6.237,26.173,5.844],"h1":[19.866,17.248,10.372,30.618,4.449],"h2":[22.766,18.877,9.663,38.764,6.178],"h3":[31.492,23.549,6.464,24.934,6.392],"y26":[28.84,6.368,5.473,21.966,3.153],"aj":[11.771,14.66,7.38,19.771,2.838]},"zd":{"p4":[2.984,0.584,0.943,0.239,4.074],"h1":[2.685,0.459,1.539,0.284,3.002],"h2":[2.842,0.483,1.484,0.316,4.172],"h3":[3.667,0.613,0.988,0.237,4.406],"y26":[3.142,0.181,0.837,0.289,2.196],"aj":[1.633,0.404,1.042,0.189,1.905]},"s29":[13.8,3.08,15.6,0.97,66.55]},{"k":"min_final","n":"PBI minero","d":"PBI minero de la zona (LP); mismo CP que el final","tag":"","w":"min","bW":0.132,"pW":0.514,"m":{"p4":12.217,"h1":16.327,"h2":15.561,"h3":15.19,"sd4":4.096,"y26":8.536,"aj":9.811},"e":{"p4":2.9,"h1":3.297,"h2":3.341,"h3":3.494,"sd4":1.282,"y26":2.025,"aj":1.943},"z":{"p4":[16.276,12.077,8.037,21.566,3.128],"h1":[15.197,11.616,11.044,40.703,3.075],"h2":[16.356,12.096,9.142,36.376,3.835],"h3":[26.254,10.224,10.784,26.032,2.657],"y26":[18.591,1.262,5.544,15.947,1.337],"aj":[7.741,10.649,5.255,23.179,2.232]},"zd":{"p4":[1.925,0.323,1.217,0.204,2.13],"h1":[2.235,0.328,1.632,0.366,2.032],"h2":[2.102,0.335,1.398,0.29,2.558],"h3":[3.027,0.255,1.629,0.252,1.826],"y26":[2.025,0.036,0.848,0.21,0.932],"aj":[1.104,0.296,0.768,0.215,1.504]},"s29":[12.77,2.84,15.3,1.02,68.07]},{"k":"masa_sinnino","n":"Sin Niño","d":"Modelo final sin el Niño","tag":"","w":"masa","bW":1.497,"pW":0.0,"m":{"p4":18.784,"h1":17.166,"h2":19.912,"h3":18.456,"sd4":6.92,"y26":14.704,"aj":11.57},"e":{"p4":5.209,"h1":4.4,"h2":5.065,"h3":4.905,"sd4":2.161,"y26":3.938,"aj":2.768},"z":{"p4":[35.756,21.505,5.07,24.623,6.965],"h1":[24.346,16.481,10.082,29.913,5.009],"h2":[27.62,17.975,9.157,38.044,6.763],"h3":[31.236,23.573,6.318,24.821,6.33],"y26":[34.533,6.206,6.168,22.744,3.869],"aj":[14.173,14.149,7.031,19.368,3.131]},"zd":{"p4":[4.009,0.543,0.77,0.227,4.869],"h1":[3.194,0.439,1.496,0.278,3.394],"h2":[3.364,0.459,1.41,0.311,4.585],"h3":[3.63,0.614,0.965,0.235,4.365],"y26":[3.762,0.176,0.944,0.299,2.695],"aj":[1.845,0.392,0.993,0.187,2.118]},"s29":[14.51,3.05,15.46,0.96,66.02]},{"k":"masa_nino","n":"Solo masa + Niño","d":"Masa salarial (LP); Niño N (CP)","tag":"","w":"masa","bW":1.497,"pW":0.0,"m":{"p4":17.153,"h1":16.366,"h2":19.519,"h3":17.711,"sd4":8.026,"y26":12.345,"aj":11.306},"e":{"p4":3.464,"h1":4.03,"h2":4.313,"h3":4.213,"sd4":2.569,"y26":3.025,"aj":2.875},"z":{"p4":[19.855,27.858,4.889,29.01,4.154],"h1":[20.791,19.804,6.073,30.022,5.139],"h2":[22.387,22.474,7.925,39.477,5.331],"h3":[25.79,27.844,6.643,23.345,4.933],"y26":[26.424,5.147,4.792,22.494,2.865],"aj":[12.35,15.481,6.382,18.552,3.768]},"zd":{"p4":[2.312,0.71,0.746,0.263,2.898],"h1":[2.93,0.521,0.926,0.275,3.408],"h2":[2.915,0.577,1.222,0.325,3.587],"h3":[3.076,0.726,1.018,0.224,3.382],"y26":[2.879,0.146,0.733,0.296,1.996],"aj":[1.771,0.423,0.859,0.176,2.521]},"s29":[13.52,3.1,15.36,0.97,67.04]},{"k":"masa_sola","n":"Solo masa salarial","d":"Sin variables nacionales","tag":"","w":"masa","bW":1.497,"pW":0.0,"m":{"p4":19.315,"h1":17.342,"h2":20.612,"h3":17.791,"sd4":7.751,"y26":13.832,"aj":11.678},"e":{"p4":4.784,"h1":4.624,"h2":4.98,"h3":4.291,"sd4":2.598,"y26":3.616,"aj":3.065},"z":{"p4":[35.002,25.469,3.877,26.315,5.914],"h1":[27.273,18.689,5.944,28.905,5.898],"h2":[30.167,21.191,7.267,38.197,6.241],"h3":[26.91,27.865,6.695,22.466,5.019],"y26":[31.88,5.063,5.42,23.233,3.563],"aj":[14.985,14.98,6.196,18.232,3.997]},"zd":{"p4":[3.937,0.647,0.594,0.241,4.148],"h1":[3.638,0.492,0.907,0.266,3.945],"h2":[3.745,0.543,1.124,0.315,4.234],"h3":[3.166,0.726,1.023,0.215,3.451],"y26":[3.473,0.144,0.829,0.306,2.482],"aj":[2.018,0.412,0.834,0.174,2.693]},"s29":[14.18,3.08,15.24,0.97,66.54]},{"k":"masa_oro_lp","n":"Upside oro","d":"Final + oro × Sur (LP)","tag":"up","w":"masa","bW":1.332,"pW":0.0,"m":{"p4":20.446,"h1":17.646,"h2":22.325,"h3":23.431,"sd4":8.138,"y26":13.601,"aj":11.349},"e":{"p4":4.187,"h1":4.635,"h2":5.015,"h3":6.241,"sd4":1.993,"y26":4.264,"aj":2.783},"z":{"p4":[24.84,27.572,17.582,29.497,2.738],"h1":[17.301,16.839,17.608,30.922,5.561],"h2":[23.539,21.09,21.302,41.262,4.432],"h3":[33.979,25.543,27.652,24.904,5.075],"y26":[24.984,3.09,9.514,24.764,5.654],"aj":[11.517,14.163,8.011,19.727,3.329]},"zd":{"p4":[2.847,0.7,2.679,0.263,1.885],"h1":[2.289,0.439,2.633,0.278,3.632],"h2":[2.958,0.534,3.28,0.332,2.927],"h3":[3.926,0.654,4.223,0.231,3.449],"y26":[2.722,0.088,1.455,0.326,3.939],"aj":[1.604,0.388,1.144,0.189,2.24]},"s29":[13.22,2.94,18.93,0.93,63.99]}],"Buses":[{"k":"min_final","n":"Modelo final","d":"PBI minero de la zona (LP); manufactura N y S (CP)","tag":"final","w":"min","bW":0.509,"pW":0.187,"m":{"p4":14.836,"h1":22.564,"h2":22.518,"h3":23.321,"sd4":4.458,"y26":18.802,"aj":24.995},"e":{"p4":2.846,"h1":7.083,"h2":6.967,"h3":4.552,"sd4":2.187,"y26":4.313,"aj":4.758},"z":{"p4":[6.612,12.198,11.651,41.339,2.38],"h1":[16.748,12.987,33.273,45.328,4.484],"h2":[18.316,10.079,20.461,54.512,9.222],"h3":[12.65,17.028,21.427,63.249,2.251],"y26":[11.825,56.733,16.321,7.009,2.12],"aj":[12.368,29.724,13.446,63.602,5.835]},"zd":{"p4":[0.77,0.251,2.056,1.133,1.482],"h1":[3.207,0.282,6.683,1.462,2.532],"h2":[3.242,0.212,3.746,1.503,5.232],"h3":[1.793,0.366,3.747,1.792,1.404],"y26":[1.608,2.705,2.859,0.137,1.318],"aj":[1.863,0.568,2.816,0.795,3.472]},"s29":[10.96,2.07,21.83,1.57,63.56]},{"k":"masa_final","n":"Masa salarial","d":"Masa salarial (LP); mismo CP que el final","tag":"","w":"masa","bW":0.904,"pW":0.207,"m":{"p4":24.149,"h1":26.184,"h2":26.969,"h3":31.569,"sd4":4.941,"y26":22.242,"aj":26.004},"e":{"p4":7.576,"h1":9.201,"h2":8.937,"h3":8.306,"sd4":1.328,"y26":6.033,"aj":5.571},"z":{"p4":[36.898,18.515,16.374,39.141,9.815],"h1":[28.396,12.9,33.713,46.57,9.34],"h2":[32.943,13.811,21.112,54.315,12.665],"h3":[35.756,25.938,23.071,64.236,8.846],"y26":[21.162,66.162,14.088,4.195,5.603],"aj":[16.868,41.818,13.547,50.314,7.473]},"zd":{"p4":[4.44,0.386,2.897,1.095,6.334],"h1":[4.439,0.272,6.782,1.495,5.414],"h2":[4.618,0.291,3.802,1.515,7.648],"h3":[4.471,0.552,4.079,1.828,5.683],"y26":[2.878,3.155,2.468,0.082,3.483],"aj":[2.427,0.737,2.784,0.717,4.477]},"s29":[13.62,2.42,22.38,1.41,60.17]},{"k":"min_sola","n":"Solo PBI minero","d":"Sin variables nacionales","tag":"","w":"min","bW":0.509,"pW":0.187,"m":{"p4":15.736,"h1":19.455,"h2":20.802,"h3":23.01,"sd4":4.86,"y26":19.373,"aj":25.42},"e":{"p4":3.464,"h1":6.313,"h2":5.354,"h3":4.67,"sd4":2.507,"y26":4.548,"aj":5.006},"z":{"p4":[5.853,12.204,14.787,42.357,3.478],"h1":[17.57,8.699,17.556,45.82,7.632],"h2":[15.509,10.779,16.384,55.737,5.602],"h3":[11.94,14.843,22.405,63.236,2.628],"y26":[13.447,57.034,19.012,5.589,1.784],"aj":[12.796,26.717,14.147,66.883,6.559]},"zd":{"p4":[0.703,0.252,2.637,1.162,2.174],"h1":[3.398,0.185,3.279,1.47,4.295],"h2":[2.739,0.227,2.958,1.537,3.248],"h3":[1.701,0.317,3.906,1.791,1.625],"y26":[1.829,2.72,3.33,0.109,1.109],"aj":[1.999,0.519,2.883,0.806,3.804]},"s29":[10.73,2.1,20.09,1.62,65.47]},{"k":"masa_sola","n":"Solo masa salarial","d":"Sin variables nacionales","tag":"","w":"masa","bW":0.904,"pW":0.207,"m":{"p4":23.441,"h1":22.32,"h2":25.793,"h3":30.912,"sd4":5.293,"y26":22.21,"aj":26.09},"e":{"p4":7.324,"h1":6.47,"h2":7.662,"h3":8.657,"sd4":1.758,"y26":6.012,"aj":5.593},"z":{"p4":[36.282,17.343,15.424,38.674,9.481],"h1":[27.166,16.786,16.614,44.826,6.208],"h2":[32.749,13.036,18.991,55.285,8.903],"h3":[34.417,20.482,26.069,64.001,9.589],"y26":[21.007,66.165,14.28,4.079,5.519],"aj":[16.766,41.787,14.06,50.39,7.445]},"zd":{"p4":[4.34,0.361,2.73,1.08,6.136],"h1":[4.212,0.362,3.197,1.436,3.732],"h2":[4.555,0.275,3.421,1.536,5.537],"h3":[4.282,0.432,4.628,1.821,6.152],"y26":[2.857,3.155,2.501,0.08,3.431],"aj":[2.393,0.737,2.879,0.718,4.459]},"s29":[13.76,2.42,22.16,1.41,60.25]},{"k":"min_nino","n":"Final + Niño","d":"Final + Niño N (t−1, CP)","tag":"","w":"min","bW":0.509,"pW":0.187,"m":{"p4":29.281,"h1":28.336,"h2":30.06,"h3":32.278,"sd4":8.984,"y26":19.014,"aj":24.848},"e":{"p4":8.275,"h1":9.389,"h2":9.921,"h3":8.127,"sd4":2.851,"y26":4.419,"aj":4.742},"z":{"p4":[59.044,18.507,15.008,45.439,8.409],"h1":[36.046,15.231,36.765,46.578,7.06],"h2":[46.75,13.021,21.879,55.99,12.662],"h3":[46.572,21.576,20.641,65.392,7.208],"y26":[12.618,56.684,16.47,7.05,2.246],"aj":[11.664,29.638,13.432,63.589,5.916]},"zd":{"p4":[6.783,0.378,2.693,1.23,5.465],"h1":[5.406,0.326,7.332,1.492,4.222],"h2":[6.523,0.271,4.056,1.536,7.456],"h3":[5.719,0.459,3.609,1.847,4.621],"y26":[1.716,2.703,2.885,0.137,1.396],"aj":[1.79,0.566,2.811,0.793,3.525]},"s29":[10.65,2.08,21.9,1.58,63.79]}]},"aj":"2017–2025","tit":{"Camiones":"En camiones, el PBI minero baja el MAPE de las 4 pruebas 2023–2025 de 17,5% a 12,2%: mejora en todas las zonas salvo el Sur","Buses":"En buses, el PBI minero (modelo final) tiene menor MAPE que la masa salarial en todas las zonas salvo el Oriente: 14,8% frente a 24,1% en las 4 pruebas 2023–2025"},"bul":{"Camiones":["<b>A 1, 2 y 3 años:</b> 16,3%, 15,6% y 15,2% con PBI minero, frente a 16,5%, 19,2% y 18,6% con masa salarial. 2026 frente al real: 8,5% frente a 13,2%.","<b>Oriente:</b> con 1% del mercado, tiene el mayor MAPE (26,2% con masa y 21,6% con PBI minero en las 4 pruebas); pocas unidades hacen grande el error porcentual. En pp de reparto, el error es 4,41 y 2,90.","<b>Por qué se mantiene la masa salarial:</b> con el PBI minero, su elasticidad de largo plazo es 0,13 y no es significativa (p HAC 0,51); la de la masa salarial es 1,50 (p HAC 0,000). Con el PBI minero, Lima llega a 68,1% en 2029 (final: 66,5%)."],"Buses":["<b>A 1, 2 y 3 años:</b> 22,6%, 22,5% y 23,3% con PBI minero, frente a 26,2%, 27,0% y 31,6% con masa salarial. 2026 frente al real: 18,8% frente a 22,2%.","<b>Oriente:</b> con cerca de 2% de los buses, tiene el mayor MAPE (41,3% con PBI minero y 39,1% con masa salarial en las 4 pruebas).","<b>Significancia:</b> ninguna de las dos es significativa en el largo plazo: PBI minero β 0,51 (p HAC 0,19), masa salarial β 0,90 (p HAC 0,21)."]}};
+const T7 = [["p4", "4 pruebas", "2023–2025"], ["h1", "A 1 año", ""], ["h2", "A 2 años", ""], ["h3", "A 3 años", ""], ["y26", "2026 frente", "al real"], ["aj", "En muestra", D7.aj]];
+const O7 = D7.orig, n7 = h => O7.filter(o => o + h <= 2025);
+const rng7 = h => { const o = n7(h); return `${o.length} pruebas, datos hasta ${o[0]}–${String(o[o.length - 1]).slice(2)}`; };
+let sM = "Camiones", mM = "m";
+function rM() {
+  const ms = D7.seg[sM], q = mM, un = q === "m" ? "MAPE (%)" : "error de reparto (pp)", dg = q === "m" ? 1 : 2;
+  const v = (m, k) => m[q][k];
+  const row = (lab, sub, k, cls) => { const xs = ms.map(m => v(m, k)), b = Math.min(...xs);
+    return `<tr class="${cls || ""}"><td class="rh">${lab}${sub ? `<small>${sub}</small>` : ""}</td>` + ms.map((m, i) => `<td class="${xs[i] === b ? "up" : ""} ${m.tag === "final" ? "fin" : ""}">${xs[i] === b ? "<b>" + nf(xs[i], dg) + "</b>" : nf(xs[i], dg)}</td>`).join("") + "</tr>"; };
+  const sec = t => `<tr class="sec"><td colspan="${ms.length + 1}">${t}</td></tr>`;
+  const tg = m => m.tag === "final" ? '<span class="tag">Final</span>' : m.tag === "up" ? '<span class="tag bl">Upside</span>' : "";
+  let t = `<table class="tb alt7"><thead><tr><th class="l" style="width:17%"></th>` + ms.map(m => `<th class="l">${m.n}${tg(m)}</th>`).join("") + "</tr></thead><tbody>";
+  t += `<tr><td class="rh">Qué es</td>` + ms.map(m => `<td class="ds ${m.tag === "final" ? "fin" : ""}">${m.d}</td>`).join("") + "</tr>";
+  t += `<tr><td class="rh">Variable de largo plazo<small>β (p HAC)</small></td>` + ms.map(m => `<td class="nw ${m.tag === "final" ? "fin" : ""}">${m.w === "masa" ? "Masa" : "PBI minero"} ${nf(m.bW, 2)} <span style="color:${m.pW < 0.05 ? "#1E8C3A" : "#C00000"}">(${nf(m.pW, 3)})</span></td>`).join("") + "</tr>";
+  t += sec(`FUERA DE MUESTRA (BACKTESTING): ${un.toUpperCase()}`);
+  t += row("2023–2025", "4 pruebas, datos hasta 2022 y 2023", "p4") + row("A 1 año", rng7(1), "h1") + row("A 2 años", rng7(2), "h2") + row("A 3 años", rng7(3), "h3") + row("Desviación estándar", "de las 4 pruebas", "sd4");
+  t += sec(`2026 FRENTE AL REAL ANUALIZADO: ${un.toUpperCase()}`) + row("Proyección 2026", "datos hasta 2025", "y26");
+  t += sec(`EN MUESTRA, MODELO ESTIMADO CON 2016–2025: ${un.toUpperCase()}`) + row(`${un.split(" (")[0].replace(/^./, c => c.toUpperCase())} ${D7.aj}`, "desde lo observado en t−1", "aj");
+  t += sec("PROYECCIÓN 2029: PARTICIPACIÓN (%)");
+  t += `<tr><td class="rh">Norte | Sur | Lima</td>` + ms.map(m => `<td class="nw ${m.tag === "final" ? "fin" : ""}">${nf(m.s29[0])} | ${nf(m.s29[2])} | ${nf(m.s29[4])}</td>`).join("") + "</tr>";
+  document.getElementById("tbM").innerHTML = t + "</tbody></table>";
+}
+const ZS = [["Promedio 5 zonas", "#1E8C3A"], ["Norte", "#22668A"], ["Centro", "#A6A6A6"], ["Sur", "#8DB9D6"], ["Oriente", "#C98A12"], ["Lima", "#13285A"]];
+const ZST = {sZc: {seg: "Camiones", p: "p4", w: "masa", m: "m", off: []}, sZb: {seg: "Buses", p: "p4", w: "min", m: "m", off: []}};
+function rZ(id) {
+  const S = ZST[id], ms = D7.seg[S.seg], ma = ms.find(m => m.k === "masa_final"), mi = ms.find(m => m.k === "min_final"), q = S.m;
+  const fin = S.seg === "Camiones" ? "masa" : "min", dg = q === "m" ? 1 : 2, unit = q === "m" ? "MAPE (%)" : "error de reparto (pp)";
+  const zv = (m, k) => q === "m" ? [m.m[k]].concat(m.z[k]) : [m.e[k]].concat(m.zd[k]);
+  const tn = T7.find(x => x[0] === S.p), tl = tn[1] + (tn[2] ? " " + tn[2] : "");
+  document.getElementById(`h${id}a`).textContent = (q === "m" ? "MAPE" : "Error de reparto") + " por zona: masa salarial frente a PBI minero";
+  document.getElementById(`u${id}a`).textContent = `${tl}; ${q === "m" ? "%" : "pp; total = ½ Σ de las zonas"}; en verde, el menor`;
+  const zl = i => i ? ZS[i][0] : q === "m" ? "Promedio 5 zonas" : "Total (½ Σ zonas)";
+  const a = zv(ma, S.p), b = zv(mi, S.p);
+  const tg = w => w === fin ? ' <span class="tag">Final</span>' : "";
+  document.getElementById(`tb${id}`).innerHTML = `<table class="tb zt"><thead><tr><th class="l">Zona</th><th>Masa salarial${tg("masa")}</th><th>PBI minero${tg("min")}</th><th>Diferencia</th></tr></thead><tbody>` +
+    ZS.map((_, i) => { const z = zl(i), lo = Math.min(a[i], b[i]); return `<tr class="${i ? "" : "hi"}"><td>${z}</td><td class="${a[i] === lo ? "up" : ""}">${nf(a[i], dg)}</td><td class="${b[i] === lo ? "up" : ""}">${nf(b[i], dg)}</td><td>${pf(b[i] - a[i], dg)}</td></tr>`; }).join("") + "</tbody></table>";
+  const m = S.w === "masa" ? ma : mi, on = ZS.map((_, i) => !S.off.includes(i));
+  document.getElementById(`h${id}b`).textContent = `${q === "m" ? "MAPE" : "Error de reparto"} por zona con ${S.w === "masa" ? "masa salarial" : "PBI minero"}${S.w === fin ? " (final)" : ""}, por tipo de prueba`;
+  document.getElementById(`u${id}b`).textContent = q === "m" ? "%, |participación proyectada / real − 1|; panel ECM; promedio de las pruebas de cada tipo" : "pp, |participación proyectada − real|; total = ½ Σ de las zonas";
+  const lg = document.getElementById(`l${id}`);
+  lg.innerHTML = ZS.map(([, c], i) => `<span data-i="${i}" class="${on[i] ? "" : "off"}"><i class="sq" style="background:${c};color:${c}"></i>${zl(i)}</span>`).join("");
+  lg.onclick = e => { const sp = e.target.closest("span[data-i]"); if (!sp) return; const i = +sp.dataset.i; S.off = S.off.includes(i) ? S.off.filter(j => j !== i) : S.off.concat([i]); rZ(id); };
+  const ser = ZS.map(([, c], i) => ({c, v: T7.map(([k]) => zv(m, k)[i]), bold: i === 0, big: i === 0, nolab: i > 0})).filter((_, i) => on[i]);
+  bars(document.getElementById(`c${id}`), {cats: T7.map(([, a1, a2]) => a2 ? a1 + "\n" + a2 : a1), vf: v => nf(v, q === "m" ? 0 : 1), series: ser.length ? ser : [{c: "#fff", v: T7.map(() => 0)}], mb: 34});
+}
+function initM7() {
+  tabs("tMs", [["Camiones", "Camiones"], ["Buses", "Buses"]], sM, v => { sM = v; rM(); }, "Segmento");
+  tabs("tMm", [["m", "MAPE (%)"], ["e", "Error de reparto (pp)"]], mM, v => { mM = v; rM(); }, "Medida");
+  for (const id of ["sZc", "sZb"]) {
+    const S = ZST[id];
+    tabs(`t${id}p`, T7.map(([k, a1, a2]) => [k, k === "p4" ? "4 pruebas" : k === "y26" ? "2026" : a1]), S.p, v => { S.p = v; rZ(id); }, "Prueba");
+    tabs(`t${id}w`, [["masa", "Masa salarial"], ["min", "PBI minero"]], S.w, v => { S.w = v; rZ(id); });
+    tabs(`t${id}m`, [["m", "MAPE (%)"], ["e", "Error de reparto (pp)"]], S.m, v => { S.m = v; rZ(id); }, "Medida");
+  }
+}
+
 /* ---------- inicio ---------- */
 function init() {
   tabs("t3", [["un", "Un paso (2021–2025)"], ["va", "Varios pasos (desde 2022)"]], t3, v => { t3 = v; r3(); }, "Prueba");
@@ -1146,6 +1274,7 @@ function init() {
     r6();
   };
   initc();
+  initM7();
   r1();
   set9();
   const c9 = document.getElementById("c9");
@@ -1155,7 +1284,7 @@ function init() {
   c9.onclick = e => { const t = yAt9(e); if (t != null) { y9 = t; hv9 = null; r9(); } };
   document.getElementById("tb9a").onclick = e => { const tr = e.target.closest("tr[data-k]"); if (tr) set9(tr.dataset.k); };
   document.getElementById("tb9b").onclick = e => { const tr = e.target.closest("tr[data-z]"); if (tr) set9(null, tr.dataset.z); };
-  const all = () => { r3(); rc(); r4(); r5(); r6(); r7(); r8(); r9(); };
+  const all = () => { r3(); rc(); r4(); r5(); r6(); r7(); r8(); r9(); rM(); rZ("sZc"); rZ("sZb"); };
   all(); let tm; window.addEventListener("resize", () => { clearTimeout(tm); tm = setTimeout(all, 120); });
 }
 init();
